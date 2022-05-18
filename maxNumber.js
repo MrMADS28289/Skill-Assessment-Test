@@ -1,9 +1,7 @@
-const arr = [[3, 2, 1], [4, 5, 6], [9, 8, 7]];
+const findMax = numbers => {
+    return Math.max(...numbers.map(row => Array.isArray(row) ? findMax(row) : row))
+};
 
-const max = Math.max(...[].concat(...arr));
+var ar = [2, 4, 10, [12, 4, [100, 99], 4], [3, 2, 99], 0];
 
-const min = Math.min(...[].concat(...arr));
-
-console.log(max);
-
-console.log(min); 
+console.log(findMax(ar));
